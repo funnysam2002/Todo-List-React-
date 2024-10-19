@@ -17,6 +17,10 @@ Vite in comparison with "create-react-app" has more advantages like
 4. Highly optimised via Rollup
 5. Frameworks like react,vue,svelte etc are supported on this tool
 
+BULMA:
+
+For styling the application, "Bulma" , a open-source framework, was used. Bulma, as said is a open-source CSS Framework, provides ready-to-use frontend components that you can easily combine to build responsive web interfaces. Various classes have been imported(used) for styling the buttons according to their functionality. External CSS has also been used to style some "div" containers.
+
 
 ## Documentation
 
@@ -26,6 +30,8 @@ The simple workflow of the application.
 
 
 ## Deployment
+
+VITE:
 
 Firstly, to create any vite project, use the following command
 
@@ -41,9 +47,17 @@ Next, after creating the project, run the following commands
 
 3)npm run dev => [this will give the information about the localhost where the application will be hosted on and a link which you can click and directly open the application.]
 
- The commond [3] should be ran when you want to view the application.
+ The commond [3] should be ran if you want to view the application.
 
- NOTE: For using "Vite" on your device, it is only required for nodejs to installed.
+ NOTE: For using "Vite" on your device, the only requirement is that, nodejs should be installed.
+
+BULMA:
+
+For using "BULMA" , run the command 
+
+npm install bulma
+
+Include the command 'import "bulma/css/bulma.min.css";' in your "App.jsx" for using the style classes for project elements. 
 
 
 
