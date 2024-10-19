@@ -1,8 +1,8 @@
 import ThirdComponent from "./thirdComponent";
 import { useState } from "react";
 export default function secondComponent() {
-  const [title, setTitle] = useState("");
-  const [arr, setArr] = useState([]);
+  const [title, setTitle] = useState(""); //title that the user enters
+  const [arr, setArr] = useState([]); // list which maintains the title names
 
   function handleClick() {
     setArr([...arr, title]);
@@ -10,7 +10,7 @@ export default function secondComponent() {
   }
   return (
     <div>
-      <div class="field has-addons">
+      <div class="field has-addons"> this class is used for input field and "submit" button to appear adjacent to each other
         <input
           type="text"
           placeholder="Enter title name"
@@ -28,7 +28,7 @@ export default function secondComponent() {
       <ul style={{ listStyleType: "none" }}>
         {arr.map((e, id) => (
           <li key={id}>
-            <ThirdComponent titleName={e} num={id + 1} />
+            <ThirdComponent titleName={e} num={id + 1} /> //we are passing the title and the index corresponding to the title as props which will be used in "thirdComponent.jsx"
           </li>
         ))}
       </ul>
