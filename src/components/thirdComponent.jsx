@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 export default function thirdComponent({ titleName, num }) {
-  const [td, setTd] = useState("");
-  const [list, setList] = useState([]);
-  const [btn, setBtn] = useState(false);
-  const [strike, setStrike] = useState([]);
-  const [del, setDel] = useState(false);
-  const [disable, setDisable] = useState(false);
+  const [td, setTd] = useState(""); // todo that will be added to list
+  const [list, setList] = useState([]); //list which manages the todo
+  const [btn, setBtn] = useState(false); //toggle button used for disabling the input and "ADD" button
+  const [strike, setStrike] = useState([]); //list which carry boolean values to check whether the task is completed or not
+  const [del, setDel] = useState(false); // value used to delete the todo component
+  const [disable, setDisable] = useState(false); //toggle button used to disable the checkboxes 
 
   function handleAdd() {
     setList([...list, td]);
@@ -35,13 +35,12 @@ export default function thirdComponent({ titleName, num }) {
   }
 
   return (
-    !del && (
+    !del && ( // condition provided to delete the task component
       <div className="list-app">
-        {/* Input and Buttons in one line */}
         <div>
-          {/* Input field */}
+          {/* Input field */} //default title would be "TASK-LIST ID" [ID is the index of the task in the list]
           <div className="control">
-            <p>Title : {titleName ? titleName : `TASK-LIST ${num}`}</p>
+            <p>Title : {titleName ? titleName : `TASK-LIST ${num}`}</p> 
             <input
               type="text"
               placeholder="Add todo"
@@ -54,7 +53,7 @@ export default function thirdComponent({ titleName, num }) {
             />
           </div>
 
-          {/* Add button */}
+          {/* Add button */} //Performs the task of adding the task to the list component
 
           <button
             className="button is-info is-small"
@@ -64,27 +63,27 @@ export default function thirdComponent({ titleName, num }) {
             Add
           </button>
 
-          {/* Save button */}
+          {/* Save button */} //toggle button used to disable the input field and "Add" button
 
           <button className="button is-success is-small" onClick={handleSave}>
             Save
-          </button>
+          </button> 
 
-          {/* Update button */}
+          {/* Update button */} //toggle button which inverts the disability caused due to clicking the "Save" button
 
           <button className="button is-warning is-small" onClick={handleUpdate}>
             Update
-          </button>
+          </button> 
 
-          {/* Delete button */}
+          {/* Delete button */} // deletes the div element present in the "list", but toggling the {del} as true/false
 
           <button className="button is-danger is-small" onClick={handleDelete}>
             Delete
-          </button>
+          </button> 
         </div>
 
-        {/* Task List Below Input and Buttons */}
-        <div className="content">
+    
+        <div className="content"> // div for displaying all the tasks entered 
           <ul>
             {list.map((t, id) => (
               <li
@@ -94,12 +93,13 @@ export default function thirdComponent({ titleName, num }) {
                   color: disable ? "lightgrey" : "black",
                 }}
               >
+                // a checkbox which when checked strikes off the task.
                 <input
                   type="checkbox"
                   checked={strike[id]}
                   onChange={() => handleCheck(id)}
-                  disabled={disable}
-                />
+                  disabled={disable}      
+                /> 
                 <label>{t}</label>
               </li>
             ))}
