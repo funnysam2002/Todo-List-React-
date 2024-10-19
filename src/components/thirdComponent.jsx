@@ -4,7 +4,7 @@ export default function thirdComponent({ titleName, num }) {
   const [td, setTd] = useState(""); // todo that will be added to list
   const [list, setList] = useState([]); //list which manages the todo
   const [btn, setBtn] = useState(false); //toggle button used for disabling the input and "ADD" button
-  const [strike, setStrike] = useState([]); //list which carry boolean values to check whether the task is completed or not
+  const [strike, setStrike] = useState([]); //list which carry boolean values to check whether the todo is completed or not
   const [del, setDel] = useState(false); // value used to delete the todo component
   const [disable, setDisable] = useState(false); //toggle button used to disable the checkboxes 
 
@@ -53,7 +53,7 @@ export default function thirdComponent({ titleName, num }) {
             />
           </div>
 
-          {/* Add button */} //Performs the task of adding the task to the list component
+          {/* Add button */} //Performs the task of adding the todo to the list component
 
           <button
             className="button is-info is-small"
@@ -75,7 +75,7 @@ export default function thirdComponent({ titleName, num }) {
             Update
           </button> 
 
-          {/* Delete button */} // deletes the div element present in the "list", but toggling the {del} as true/false
+          {/* Delete button */} // deletes the task component present in the "list", but toggling the {del} as true/false
 
           <button className="button is-danger is-small" onClick={handleDelete}>
             Delete
@@ -83,7 +83,7 @@ export default function thirdComponent({ titleName, num }) {
         </div>
 
     
-        <div className="content"> // div for displaying all the tasks entered 
+        <div className="content"> // div for displaying all the todos entered 
           <ul>
             {list.map((t, id) => (
               <li
@@ -93,7 +93,7 @@ export default function thirdComponent({ titleName, num }) {
                   color: disable ? "lightgrey" : "black",
                 }}
               >
-                // a checkbox which when checked strikes off the task.
+                // a checkbox which when checked strikes off the todo.
                 <input
                   type="checkbox"
                   checked={strike[id]}
