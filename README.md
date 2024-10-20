@@ -34,30 +34,40 @@ The simple workflow of the application.
 VITE:
 
 Firstly, to create any vite project, use the following command
-
+```bash
 npm create vite@latest
-
+```
 Further, select the framework, you want to make the project in and type the name of the project
 
 Next, after creating the project, run the following commands
+```bash
+cd your-project-name
+```
+This will download all the packages for you.
+```bash
+npm install
+```
+This will give the information about the localhost where the application will be hosted on and a link which you can click and directly open the application.
+```bash
+npm run dev
+```
 
-1)cd your-project-name
-
-2)npm install => [will download all the packages for you]
-
-3)npm run dev => [this will give the information about the localhost where the application will be hosted on and a link which you can click and directly open the application.]
-
- The commond [3] should be ran if you want to view the application.
+ The command "npm run dev" should be ran to view the application.
 
  NOTE: For using "Vite" on your device, the only requirement is that, nodejs should be installed.
 
 BULMA:
 
 For using "BULMA" , run the command 
-
+```bash
 npm install bulma
+```
 
-Include the command 'import "bulma/css/bulma.min.css";' in your "App.jsx" for using the style classes for project elements. 
+Include the command 
+```bash
+import "bulma/css/bulma.min.css";
+```
+in your "App.jsx" for using the style classes for project elements. 
 
 
 
